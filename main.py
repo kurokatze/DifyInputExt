@@ -21,7 +21,8 @@ class DifyInputExt(BasePlugin):
 
     @handler(PromptPreProcessing)
     async def prompt_pre_processing(self, ctx: EventContext):
-        self.ap.logger.info("hello, {}".format(str(ctx.event.query)))
+        self.ap.logger.info("Prompt, {}".format(str(ctx.event.query)))
+        self.ap.logger.info("Prompt, {}".format(str(ctx.event.query.variables)))
 
     # 当收到个人消息时触发
 
