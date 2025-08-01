@@ -28,7 +28,7 @@ class DifyInputExt(BasePlugin):
     async def person_normal_message_received(self, ctx: EventContext):
         msg_chain: platform_message.MessageChain = ctx.event.message_chain
 
-        ctx.event.query["source"] = str(msg_chain.source)
+        ctx.event.query.set_variable("source", str(msg_chain.source))
 
     # 当收到群消息时触发
     # @handler(GroupNormalMessageReceived)
