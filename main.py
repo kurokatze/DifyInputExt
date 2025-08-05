@@ -1,10 +1,10 @@
-# from pkg.plugin.context import register, handler, llm_func, BasePlugin, APIHost, EventContext
-# from pkg.plugin.events import *  # 导入事件类
-# from pkg.platform.types import message as platform_message
+from pkg.plugin.context import register, handler, llm_func, BasePlugin, APIHost, EventContext
+from pkg.plugin.events import *  # 导入事件类
+from pkg.platform.types import message as platform_message
 
-from ..LangBot.pkg.plugin.context import register, handler, llm_func, BasePlugin, APIHost, EventContext
-from ..LangBot.pkg.plugin.events import *  # 导入事件类
-from ..LangBot.pkg.platform.types import message as platform_message
+# from ..LangBot.pkg.plugin.context import register, handler, llm_func, BasePlugin, APIHost, EventContext
+# from ..LangBot.pkg.plugin.events import *  # 导入事件类
+# from ..LangBot.pkg.platform.types import message as platform_message
 
 
 # 注册插件
