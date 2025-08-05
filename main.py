@@ -1,10 +1,10 @@
-from pkg.plugin.context import register, handler, llm_func, BasePlugin, APIHost, EventContext
-from pkg.plugin.events import *  # 导入事件类
-from pkg.platform.types import message as platform_message
+# from pkg.plugin.context import register, handler, llm_func, BasePlugin, APIHost, EventContext
+# from pkg.plugin.events import *  # 导入事件类
+# from pkg.platform.types import message as platform_message
 
-# from ..LangBot.pkg.plugin.context import register, handler, llm_func, BasePlugin, APIHost, EventContext
-# from ..LangBot.pkg.plugin.events import *  # 导入事件类
-# from ..LangBot.pkg.platform.types import message as platform_message
+from ..LangBot.pkg.plugin.context import register, handler, llm_func, BasePlugin, APIHost, EventContext
+from ..LangBot.pkg.plugin.events import *  # 导入事件类
+from ..LangBot.pkg.platform.types import message as platform_message
 
 
 # 注册插件
@@ -37,6 +37,12 @@ class DifyInputExt(BasePlugin):
         ctx.event.query.set_variable("source", str(msg_chain.source))
         self.ap.logger.info("hello, {}".format(str(msg_chain.source)))
         self.ap.logger.info("hello, {}".format(str(ctx.event.query)))
+
+
+    @handler(NormalMessageResponded)
+    async def normal_message_responded(self, ctx: EventContext):
+        event: NormalMessageResponded = ctx.event
+        self.ap.logger.info("response, {}".format(str(event)))
 
     # 当收到群消息时触发
     # @handler(GroupNormalMessageReceived)
